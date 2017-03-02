@@ -2,6 +2,7 @@ package cn.eeepay.app.presenter.view;
 
 /**
  * Created by xqf on 2017/3/1.
+ * 登录界面的回调方法
  */
 
 public interface ILoginView extends IView{

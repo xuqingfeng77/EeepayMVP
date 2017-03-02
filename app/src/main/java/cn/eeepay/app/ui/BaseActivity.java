@@ -1,5 +1,6 @@
 package cn.eeepay.app.ui;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -13,15 +14,18 @@ import cn.eeepay.app.R;
 import cn.eeepay.app.presenter.IPresenter;
 
 public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivity {
+    protected Context mContext;
    protected P mPresenter;
     private Unbinder mUnbinder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mContext=this;
         mPresenter=getmPresenter();
-        mUnbinder= ButterKnife.bind(this);
         setContentView(initView());
+        mUnbinder= ButterKnife.bind(this);
+        initData();
     }
 
     @Override

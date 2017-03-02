@@ -2,6 +2,8 @@ package cn.eeepay.app.presenter.implPresenter;
 
 
 
+import android.content.Context;
+
 import cn.eeepay.app.presenter.IPresenter;
 import rx.Subscription;
 import rx.subscriptions.CompositeSubscription;
@@ -10,6 +12,7 @@ import rx.subscriptions.CompositeSubscription;
  *
  */
 public class BasePresenterImpl implements IPresenter {
+    Context mContext;
 
     private CompositeSubscription mCompositeSubscription;
 

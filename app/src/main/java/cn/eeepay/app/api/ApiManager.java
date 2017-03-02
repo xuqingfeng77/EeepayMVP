@@ -16,7 +16,7 @@ public class ApiManager {
     private static Retrofit.Builder builder =
             new Retrofit.Builder()
                     .baseUrl(apiBaseUrl)
-                    .addConverterFactory(GsonConverterFactory.create());
+                    .addConverterFactory(GsonConverterFactory.create());//用gson解析
 
     private static OkHttpClient.Builder httpClient =
             new OkHttpClient.Builder();
@@ -37,10 +37,14 @@ public class ApiManager {
         return retrofit.create(serviceClass);
     }
 
+    /**
+     * 更换url，再去createService
+     * @param newApiBaseUrl
+     */
     public static void changeApiBaseUrl(String newApiBaseUrl) {
         apiBaseUrl = newApiBaseUrl;
         builder = new Retrofit.Builder()
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())//用gson解析
                 .baseUrl(apiBaseUrl);
     }
 
