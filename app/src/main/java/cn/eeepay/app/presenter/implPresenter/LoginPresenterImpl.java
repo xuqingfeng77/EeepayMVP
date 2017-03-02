@@ -9,6 +9,7 @@ import cn.eeepay.app.bean.LoginBean;
 import cn.eeepay.app.presenter.ILoginPresenter;
 import cn.eeepay.app.presenter.view.ILoginView;
 import rx.Observer;
+import rx.Subscriber;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -39,15 +40,16 @@ public class LoginPresenterImpl extends BasePresenterImpl implements ILoginPrese
         Subscription subscription = ApiManager.createService(LoginApi.class,null).getIPInfo("22")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<LoginBean>() {
+                .subscribe(new
+                        Subscriber<LoginBean>() {
                     @Override
                     public void onCompleted() {
-
+//                        mLoginView.setName("onCompleted");
                     }
 
                     @Override
                     public void onError(Throwable e) {
-
+                        mLoginView.setName(e.getMessage());
                     }
 
                     @Override

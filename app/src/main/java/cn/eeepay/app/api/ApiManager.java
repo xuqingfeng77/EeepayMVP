@@ -4,6 +4,7 @@ package cn.eeepay.app.api;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -11,11 +12,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class ApiManager {
-    public static  String apiBaseUrl="http://github.com";
+    public static  String apiBaseUrl="http://news-at.zhihu.com/";
     private static Retrofit retrofit;
     private static Retrofit.Builder builder =
             new Retrofit.Builder()
                     .baseUrl(apiBaseUrl)
+                    .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create());//用gson解析
 
     private static OkHttpClient.Builder httpClient =
@@ -30,10 +32,9 @@ public class ApiManager {
 //                builder.client(httpClient.build());
 //                retrofit = builder.build();
 //            }
-
-            builder.client(httpClient.build());
-            retrofit = builder.build();
         }
+        builder.client(httpClient.build());
+        retrofit = builder.build();
         return retrofit.create(serviceClass);
     }
 
@@ -44,6 +45,7 @@ public class ApiManager {
     public static void changeApiBaseUrl(String newApiBaseUrl) {
         apiBaseUrl = newApiBaseUrl;
         builder = new Retrofit.Builder()
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())//用gson解析
                 .baseUrl(apiBaseUrl);
     }
