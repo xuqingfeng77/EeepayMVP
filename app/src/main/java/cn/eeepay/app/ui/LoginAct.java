@@ -18,6 +18,10 @@ public class LoginAct extends BaseActivity<ILoginPresenter> implements ILoginVie
     Button btnLogin;
     @BindView(R.id.login_txt)
     TextView txtShow;
+    @BindView(R.id.upload_singlefile)
+    Button btnSinglefile;
+    @BindView(R.id.upload_morefile)
+    Button btnMorefile;
 
     @Override
     protected int initView() {
@@ -33,20 +37,30 @@ public class LoginAct extends BaseActivity<ILoginPresenter> implements ILoginVie
     protected ILoginPresenter getmPresenter() {
         return new LoginPresenterImpl(mContext,this);
     }
-    @OnClick({R.id.login_btn,R.id.login_txt})
+    @OnClick({R.id.login_btn,R.id.upload_singlefile,R.id.upload_morefile})
     public void onClick(View v){
         switch (v.getId()){
             case R.id.login_btn:
                 mPresenter.getMeiziData(99);
 
                 break;
-            case R.id.login_txt:
+            case R.id.upload_singlefile:
+                mPresenter.uploadSignleFile();
 
+                break;
+            case R.id.upload_morefile:
+                mPresenter.uploadMoreFile();
 
                 break;
         }
 
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mPresenter.unsubcrible();
     }
 
     @Override
@@ -87,12 +101,12 @@ public class LoginAct extends BaseActivity<ILoginPresenter> implements ILoginVie
 
     @Override
     public void showProgressDialog() {
-
+       showDialog();
     }
 
     @Override
     public void hidProgressDialog() {
-
+        dismissDialog();
     }
 
     @Override

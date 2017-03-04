@@ -14,11 +14,20 @@
         android:id="@+id/login_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="获取数据"/>
+        android:text="获取数据简单数据"/>
     <TextView
         android:id="@+id/login_txt"
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
+    <Button
+        android:id="@+id/upload_singlefile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="上传单个文件"/>
+    <Button
+        android:id="@+id/upload_morefile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="上传多个文件"/>
 </LinearLayout>

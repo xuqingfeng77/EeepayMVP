@@ -6,9 +6,9 @@ package cn.eeepay.app.presenter.view;
 
 public interface IView {
    //待添加
-   void showProgressDialog();
+   void showProgressDialog();//显示对话框
 
-    void hidProgressDialog();
+    void hidProgressDialog();//隐藏对话框
 
     void showError(String error);
 }
