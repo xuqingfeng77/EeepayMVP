@@ -63,7 +63,6 @@ public class LoginAct extends BaseActivity<ILoginPresenter> implements ILoginVie
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mPresenter.unsubcrible();
     }
 
     @Override

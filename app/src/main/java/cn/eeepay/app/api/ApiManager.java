@@ -16,8 +16,8 @@ import rx.functions.Func1;
  */
 
 public class ApiManager {
-//    public static  String apiBaseUrl="http://news-at.zhihu.com/";
-    public static  String apiBaseUrl="http://ip.taobao.com/";
+    public static  String apiBaseUrl="http://news-at.zhihu.com/";
+//    public static  String apiBaseUrl="http://ip.taobao.com/";
     private static Retrofit retrofit;
     private static final int DEFAULT_TIMEOUT = 5;
     private static Retrofit.Builder builder =
