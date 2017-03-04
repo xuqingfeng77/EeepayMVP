@@ -37,6 +37,9 @@ public class LoginAct extends BaseActivity<ILoginPresenter> implements ILoginVie
     protected ILoginPresenter getmPresenter() {
         return new LoginPresenterImpl(mContext,this);
     }
+
+
+
     @OnClick({R.id.login_btn,R.id.upload_singlefile,R.id.upload_morefile})
     public void onClick(View v){
         switch (v.getId()){

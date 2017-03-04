@@ -9,8 +9,8 @@ import java.util.Map;
 
 import cn.eeepay.app.api.ApiManager;
 import cn.eeepay.app.api.CommonApi;
-import cn.eeepay.app.bean.LoginBean;
 import cn.eeepay.app.entity.HttpResult;
+import cn.eeepay.app.entity.LoginBean;
 import cn.eeepay.app.entity.UploadFile;
 import cn.eeepay.app.presenter.ILoginPresenter;
 import cn.eeepay.app.presenter.view.ILoginView;

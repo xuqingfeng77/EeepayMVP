@@ -3,14 +3,12 @@ package cn.eeepay.app.api;
 import java.util.List;
 import java.util.Map;
 
-import cn.eeepay.app.bean.LoginBean;
 import cn.eeepay.app.entity.HttpResult;
+import cn.eeepay.app.entity.LoginBean;
 import cn.eeepay.app.entity.ParamsInfo;
 import cn.eeepay.app.entity.UploadFile;
-import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
-import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;

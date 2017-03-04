@@ -17,7 +17,7 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package cn.eeepay.app.bean;
+package cn.eeepay.app.entity;
 
 import java.util.List;
 
