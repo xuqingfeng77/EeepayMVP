@@ -7,7 +7,7 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu. author xqf
  */
 
-package cn.eeepay.app.bean;
+package cn.eeepay.app.entity;
 
 import java.util.List;
 

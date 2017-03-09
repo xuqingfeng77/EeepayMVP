@@ -41,19 +41,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =new Intent(mContext, LoginAct.class);
-                startActivity(intent);
-            }
-        });
-        btnReg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(mContext,"你点我了",Toast.LENGTH_SHORT).show();
-            }
-        });
+
     }
 
     @Override

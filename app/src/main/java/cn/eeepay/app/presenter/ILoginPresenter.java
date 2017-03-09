@@ -8,5 +8,7 @@ package cn.eeepay.app.presenter;
 public interface ILoginPresenter extends IPresenter {
     void getVedioData(int t);
     void getMeiziData(int t);
+    void uploadSignleFile();
+    void uploadMoreFile();
 
 }
